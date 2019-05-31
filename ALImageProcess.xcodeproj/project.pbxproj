@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3722A10B2C00BAA867 /* AppDelegate.m */; };
+		8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3A22A10B2C00BAA867 /* ViewController.m */; };
+		8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3C22A10B2C00BAA867 /* Main.storyboard */; };
+		8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3F22A10B2E00BAA867 /* Assets.xcassets */; };
+		8CF22F4322A10B2E00BAA867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F4122A10B2E00BAA867 /* LaunchScreen.storyboard */; };
+		8CF22F4622A10B2E00BAA867 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F4522A10B2E00BAA867 /* main.m */; };
+		8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */; };
+		8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F6222A10C9100BAA867 /* ScratchViewController.m */; };
+		8CF22F6B22A10C9200BAA867 /* ScratchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F6322A10C9100BAA867 /* ScratchViewController.xib */; };
+		8CF22F6C22A10C9200BAA867 /* PickColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F6622A10C9200BAA867 /* PickColorViewController.xib */; };
+		8CF22F6D22A10C9200BAA867 /* PicProcessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F6722A10C9200BAA867 /* PicProcessViewController.xib */; };
+		8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F6822A10C9200BAA867 /* PickColorViewController.m */; };
+		8CF22F6F22A10C9200BAA867 /* PicProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F6922A10C9200BAA867 /* PicProcessViewController.m */; };
+		8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F7122A10D4800BAA867 /* JumpVCModel.m */; };
+		8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F5E22A10C2800BAA867 /* AZLImageProcessView.m */; };
+		8CF22F7422A10D9100BAA867 /* AZLScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F5D22A10C2800BAA867 /* AZLScratchView.m */; };
+		8CF22F7522A10D9300BAA867 /* AZLImageProcess.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F5F22A10C2800BAA867 /* AZLImageProcess.bundle */; };
+		8CF22F7922A10DE300BAA867 /* laimg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F7722A10DE200BAA867 /* laimg3@2x.png */; };
+		8CF22F7A22A10DE300BAA867 /* laimg2@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALImageProcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF22F3622A10B2C00BAA867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CF22F3722A10B2C00BAA867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CF22F3922A10B2C00BAA867 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8CF22F3A22A10B2C00BAA867 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8CF22F3D22A10B2C00BAA867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CF22F3F22A10B2E00BAA867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CF22F4222A10B2E00BAA867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CF22F4422A10B2E00BAA867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF22F4522A10B2E00BAA867 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CF22F4D22A10BCE00BAA867 /* UIImage+AZLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AZLProcess.h"; sourceTree = "<group>"; };
+		8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AZLProcess.m"; sourceTree = "<group>"; };
+		8CF22F5B22A10C2800BAA867 /* AZLScratchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZLScratchView.h; sourceTree = "<group>"; };
+		8CF22F5C22A10C2800BAA867 /* AZLImageProcessView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZLImageProcessView.h; sourceTree = "<group>"; };
+		8CF22F5D22A10C2800BAA867 /* AZLScratchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZLScratchView.m; sourceTree = "<group>"; };
+		8CF22F5E22A10C2800BAA867 /* AZLImageProcessView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZLImageProcessView.m; sourceTree = "<group>"; };
+		8CF22F5F22A10C2800BAA867 /* AZLImageProcess.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AZLImageProcess.bundle; sourceTree = "<group>"; };
+		8CF22F6122A10C9100BAA867 /* PicProcessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicProcessViewController.h; sourceTree = "<group>"; };
+		8CF22F6222A10C9100BAA867 /* ScratchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScratchViewController.m; sourceTree = "<group>"; };
+		8CF22F6322A10C9100BAA867 /* ScratchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScratchViewController.xib; sourceTree = "<group>"; };
+		8CF22F6422A10C9200BAA867 /* ScratchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScratchViewController.h; sourceTree = "<group>"; };
+		8CF22F6522A10C9200BAA867 /* PickColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickColorViewController.h; sourceTree = "<group>"; };
+		8CF22F6622A10C9200BAA867 /* PickColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickColorViewController.xib; sourceTree = "<group>"; };
+		8CF22F6722A10C9200BAA867 /* PicProcessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicProcessViewController.xib; sourceTree = "<group>"; };
+		8CF22F6822A10C9200BAA867 /* PickColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickColorViewController.m; sourceTree = "<group>"; };
+		8CF22F6922A10C9200BAA867 /* PicProcessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicProcessViewController.m; sourceTree = "<group>"; };
+		8CF22F7022A10D4800BAA867 /* JumpVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpVCModel.h; sourceTree = "<group>"; };
+		8CF22F7122A10D4800BAA867 /* JumpVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpVCModel.m; sourceTree = "<group>"; };
+		8CF22F7722A10DE200BAA867 /* laimg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laimg3@2x.png"; sourceTree = "<group>"; };
+		8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "laimg2@2x.jpeg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CF22F3022A10B2C00BAA867 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CF22F2A22A10B2C00BAA867 = {
+			isa = PBXGroup;
+			children = (
+				8CF22F3522A10B2C00BAA867 /* ALImageProcess */,
+				8CF22F3422A10B2C00BAA867 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CF22F3422A10B2C00BAA867 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CF22F3522A10B2C00BAA867 /* ALImageProcess */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F6022A10C7E00BAA867 /* DemoController */,
+				8CF22F5022A10BE000BAA867 /* ExtendUI */,
+				8CF22F4C22A10BA400BAA867 /* ImageProcess */,
+				8CF22F3622A10B2C00BAA867 /* AppDelegate.h */,
+				8CF22F3722A10B2C00BAA867 /* AppDelegate.m */,
+				8CF22F3922A10B2C00BAA867 /* ViewController.h */,
+				8CF22F3A22A10B2C00BAA867 /* ViewController.m */,
+				8CF22F7022A10D4800BAA867 /* JumpVCModel.h */,
+				8CF22F7122A10D4800BAA867 /* JumpVCModel.m */,
+				8CF22F7622A10DD000BAA867 /* Resources */,
+				8CF22F3C22A10B2C00BAA867 /* Main.storyboard */,
+				8CF22F3F22A10B2E00BAA867 /* Assets.xcassets */,
+				8CF22F4122A10B2E00BAA867 /* LaunchScreen.storyboard */,
+				8CF22F4422A10B2E00BAA867 /* Info.plist */,
+				8CF22F4522A10B2E00BAA867 /* main.m */,
+			);
+			path = ALImageProcess;
+			sourceTree = "<group>";
+		};
+		8CF22F4C22A10BA400BAA867 /* ImageProcess */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F4D22A10BCE00BAA867 /* UIImage+AZLProcess.h */,
+				8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */,
+			);
+			path = ImageProcess;
+			sourceTree = "<group>";
+		};
+		8CF22F5022A10BE000BAA867 /* ExtendUI */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F5F22A10C2800BAA867 /* AZLImageProcess.bundle */,
+				8CF22F5A22A10C2800BAA867 /* View */,
+			);
+			path = ExtendUI;
+			sourceTree = "<group>";
+		};
+		8CF22F5A22A10C2800BAA867 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F5B22A10C2800BAA867 /* AZLScratchView.h */,
+				8CF22F5D22A10C2800BAA867 /* AZLScratchView.m */,
+				8CF22F5C22A10C2800BAA867 /* AZLImageProcessView.h */,
+				8CF22F5E22A10C2800BAA867 /* AZLImageProcessView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CF22F6022A10C7E00BAA867 /* DemoController */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F6522A10C9200BAA867 /* PickColorViewController.h */,
+				8CF22F6822A10C9200BAA867 /* PickColorViewController.m */,
+				8CF22F6622A10C9200BAA867 /* PickColorViewController.xib */,
+				8CF22F6122A10C9100BAA867 /* PicProcessViewController.h */,
+				8CF22F6922A10C9200BAA867 /* PicProcessViewController.m */,
+				8CF22F6722A10C9200BAA867 /* PicProcessViewController.xib */,
+				8CF22F6422A10C9200BAA867 /* ScratchViewController.h */,
+				8CF22F6222A10C9100BAA867 /* ScratchViewController.m */,
+				8CF22F6322A10C9100BAA867 /* ScratchViewController.xib */,
+			);
+			path = DemoController;
+			sourceTree = "<group>";
+		};
+		8CF22F7622A10DD000BAA867 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */,
+				8CF22F7722A10DE200BAA867 /* laimg3@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CF22F3222A10B2C00BAA867 /* ALImageProcess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF22F4922A10B2E00BAA867 /* Build configuration list for PBXNativeTarget "ALImageProcess" */;
+			buildPhases = (
+				8CF22F2F22A10B2C00BAA867 /* Sources */,
+				8CF22F3022A10B2C00BAA867 /* Frameworks */,
+				8CF22F3122A10B2C00BAA867 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALImageProcess;
+			productName = ALImageProcess;
+			productReference = 8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CF22F2B22A10B2C00BAA867 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = AL;
+				TargetAttributes = {
+					8CF22F3222A10B2C00BAA867 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 8CF22F2E22A10B2C00BAA867 /* Build configuration list for PBXProject "ALImageProcess" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CF22F2A22A10B2C00BAA867;
+			productRefGroup = 8CF22F3422A10B2C00BAA867 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CF22F3222A10B2C00BAA867 /* ALImageProcess */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CF22F3122A10B2C00BAA867 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF22F4322A10B2E00BAA867 /* LaunchScreen.storyboard in Resources */,
+				8CF22F6B22A10C9200BAA867 /* ScratchViewController.xib in Resources */,
+				8CF22F6C22A10C9200BAA867 /* PickColorViewController.xib in Resources */,
+				8CF22F7A22A10DE300BAA867 /* laimg2@2x.jpeg in Resources */,
+				8CF22F7522A10D9300BAA867 /* AZLImageProcess.bundle in Resources */,
+				8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */,
+				8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */,
+				8CF22F6D22A10C9200BAA867 /* PicProcessViewController.xib in Resources */,
+				8CF22F7922A10DE300BAA867 /* laimg3@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CF22F2F22A10B2C00BAA867 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */,
+				8CF22F6F22A10C9200BAA867 /* PicProcessViewController.m in Sources */,
+				8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */,
+				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
+				8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */,
+				8CF22F7422A10D9100BAA867 /* AZLScratchView.m in Sources */,
+				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,
+				8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */,
+				8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */,
+				8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8CF22F3C22A10B2C00BAA867 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CF22F3D22A10B2C00BAA867 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CF22F4122A10B2E00BAA867 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CF22F4222A10B2E00BAA867 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CF22F4722A10B2E00BAA867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8CF22F4822A10B2E00BAA867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CF22F4A22A10B2E00BAA867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ALImageProcess/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.al.ALImageProcess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CF22F4B22A10B2E00BAA867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ALImageProcess/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.al.ALImageProcess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CF22F2E22A10B2C00BAA867 /* Build configuration list for PBXProject "ALImageProcess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF22F4722A10B2E00BAA867 /* Debug */,
+				8CF22F4822A10B2E00BAA867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CF22F4922A10B2E00BAA867 /* Build configuration list for PBXNativeTarget "ALImageProcess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF22F4A22A10B2E00BAA867 /* Debug */,
+				8CF22F4B22A10B2E00BAA867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CF22F2B22A10B2C00BAA867 /* Project object */;
+}
