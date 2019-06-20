@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66105D22BB768200415B37 /* BorderEffectViewController.m */; };
+		8C66106022BB768200415B37 /* BorderEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C66105E22BB768200415B37 /* BorderEffectViewController.xib */; };
+		8C66106222BB817100415B37 /* lenapic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66106122BB817100415B37 /* lenapic.png */; };
+		8C66106422BB842400415B37 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C66106322BB842400415B37 /* sample.jpg */; };
+		8C66106622BB925400415B37 /* whitepic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66106522BB925400415B37 /* whitepic.png */; };
+		8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AAD522B8DE2500086C7A /* GradientViewController.m */; };
+		8C82AAD822B8DE2500086C7A /* GradientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C82AAD622B8DE2500086C7A /* GradientViewController.xib */; };
+		8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AADA22B8DE8400086C7A /* MyGradientView.m */; };
 		8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3722A10B2C00BAA867 /* AppDelegate.m */; };
 		8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3A22A10B2C00BAA867 /* ViewController.m */; };
 		8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3C22A10B2C00BAA867 /* Main.storyboard */; };
@@ -29,6 +37,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C66105C22BB768200415B37 /* BorderEffectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderEffectViewController.h; sourceTree = "<group>"; };
+		8C66105D22BB768200415B37 /* BorderEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderEffectViewController.m; sourceTree = "<group>"; };
+		8C66105E22BB768200415B37 /* BorderEffectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorderEffectViewController.xib; sourceTree = "<group>"; };
+		8C66106122BB817100415B37 /* lenapic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lenapic.png; sourceTree = "<group>"; };
+		8C66106322BB842400415B37 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		8C66106522BB925400415B37 /* whitepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitepic.png; sourceTree = "<group>"; };
+		8C82AAD422B8DE2500086C7A /* GradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
+		8C82AAD522B8DE2500086C7A /* GradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
+		8C82AAD622B8DE2500086C7A /* GradientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientViewController.xib; sourceTree = "<group>"; };
+		8C82AAD922B8DE8400086C7A /* MyGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGradientView.h; sourceTree = "<group>"; };
+		8C82AADA22B8DE8400086C7A /* MyGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGradientView.m; sourceTree = "<group>"; };
 		8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALImageProcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF22F3622A10B2C00BAA867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CF22F3722A10B2C00BAA867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +170,14 @@
 				8CF22F6422A10C9200BAA867 /* ScratchViewController.h */,
 				8CF22F6222A10C9100BAA867 /* ScratchViewController.m */,
 				8CF22F6322A10C9100BAA867 /* ScratchViewController.xib */,
+				8C82AAD422B8DE2500086C7A /* GradientViewController.h */,
+				8C82AAD522B8DE2500086C7A /* GradientViewController.m */,
+				8C82AAD622B8DE2500086C7A /* GradientViewController.xib */,
+				8C66105C22BB768200415B37 /* BorderEffectViewController.h */,
+				8C66105D22BB768200415B37 /* BorderEffectViewController.m */,
+				8C66105E22BB768200415B37 /* BorderEffectViewController.xib */,
+				8C82AAD922B8DE8400086C7A /* MyGradientView.h */,
+				8C82AADA22B8DE8400086C7A /* MyGradientView.m */,
 			);
 			path = DemoController;
 			sourceTree = "<group>";
@@ -158,6 +185,9 @@
 		8CF22F7622A10DD000BAA867 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C66106522BB925400415B37 /* whitepic.png */,
+				8C66106322BB842400415B37 /* sample.jpg */,
+				8C66106122BB817100415B37 /* lenapic.png */,
 				8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */,
 				8CF22F7722A10DE200BAA867 /* laimg3@2x.png */,
 			);
@@ -221,12 +251,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C66106622BB925400415B37 /* whitepic.png in Resources */,
+				8C82AAD822B8DE2500086C7A /* GradientViewController.xib in Resources */,
 				8CF22F4322A10B2E00BAA867 /* LaunchScreen.storyboard in Resources */,
+				8C66106222BB817100415B37 /* lenapic.png in Resources */,
 				8CF22F6B22A10C9200BAA867 /* ScratchViewController.xib in Resources */,
 				8CF22F6C22A10C9200BAA867 /* PickColorViewController.xib in Resources */,
+				8C66106022BB768200415B37 /* BorderEffectViewController.xib in Resources */,
 				8CF22F7A22A10DE300BAA867 /* laimg2@2x.jpeg in Resources */,
 				8CF22F7522A10D9300BAA867 /* AZLImageProcess.bundle in Resources */,
 				8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */,
+				8C66106422BB842400415B37 /* sample.jpg in Resources */,
 				8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */,
 				8CF22F6D22A10C9200BAA867 /* PicProcessViewController.xib in Resources */,
 				8CF22F7922A10DE300BAA867 /* laimg3@2x.png in Resources */,
@@ -244,12 +279,15 @@
 				8CF22F6F22A10C9200BAA867 /* PicProcessViewController.m in Sources */,
 				8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */,
 				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
+				8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */,
 				8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */,
+				8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */,
 				8CF22F7422A10D9100BAA867 /* AZLScratchView.m in Sources */,
 				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,
 				8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */,
 				8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */,
 				8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */,
+				8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -379,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -392,7 +430,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C68CDP3Q22;
 				INFOPLIST_FILE = ALImageProcess/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +448,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C68CDP3Q22;
 				INFOPLIST_FILE = ALImageProcess/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

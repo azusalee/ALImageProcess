@@ -493,40 +493,192 @@
     return (double)alphaPixelCount/(double)bitmapByteCount;
 }
 
-//+ (NSArray *)azl_getEffectArray{
-//    NSArray* filters =  [CIFilter filterNamesInCategory:kCICategoryColorEffect];
-////    for (NSString* filterName in filters) {
-////        NSLog(@"filter name:%@",filterName);
-////        // 我们可以通过filterName创建对应的滤镜对象
-//////        CIFilter* filter = [CIFilter filterWithName:filterName];
-//////        NSDictionary* attributes = [filter attributes];
-//////        // 获取属性键/值对（在这个字典中我们可以看到滤镜的属性以及对应的key）
-//////        NSLog(@"filter attributes:%@",attributes);
-////    }
-//    
-//    return filters;
-//}
-//
-//
-//- (UIImage *)azl_imageFromFilterName:(NSString*)filterName{
-//    // 创建输入CIImage对象
-//    CIImage * inputImg = [CIImage imageWithCGImage:self.CGImage];
-//    // 创建滤镜
-//    CIFilter * filter = [CIFilter filterWithName:filterName];
-//    // 设置滤镜属性值为默认值
-//    [filter setDefaults];
-//    // 设置输入图像
-//    [filter setValue:inputImg forKey:kCIInputImageKey];
-//    // 获取输出图像
-//    CIImage * outputImg = filter.outputImage;
-//    
-//    // 创建CIContex上下文对象
-//    CIContext * context = [CIContext contextWithOptions:nil];
-//    CGImageRef cgImg = [context createCGImage:outputImg fromRect:outputImg.extent];
-//    UIImage *resultImg = [UIImage imageWithCGImage:cgImg scale:self.scale orientation:self.imageOrientation];
-//    CGImageRelease(cgImg);
-//    
-//    return resultImg;
-//}
+//边缘描边图
+- (UIImage *)azl_sobelBorderImage{
+    UIImage *orginImage = self;
+    //获取BitmapData
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef imgRef = orginImage.CGImage;
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    CGContextRef context = CGBitmapContextCreate (nil,
+                                                  width,
+                                                  height,
+                                                  kBitsPerComponent,        //每个颜色值8bit
+                                                  width*kPixelChannelCount, //每一行的像素点占用的字节数，每个像素点的RGBA四个通道各占8个bit
+                                                  colorSpace,
+                                                  kCGImageAlphaPremultipliedLast);
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imgRef);
+    unsigned char *bitmapData = CGBitmapContextGetData (context);
+    
+    //查找边缘像素
+    //unsigned char pixel[kPixelChannelCount] = {0};
+    NSInteger sobelStep = 2;
+    NSInteger index,topLeftIndex,topIndex,topRightIndex,leftIndex,rightIndex,bottomLeftIndex,bottomIndex,bottomRightIndex;
+    unsigned char topLeftData[4] = { 0, 0, 0, 0 };
+    unsigned char topData[4] = { 0, 0, 0, 0 };
+    unsigned char topRightData[4] = { 0, 0, 0, 0 };
+    unsigned char leftData[4] = { 0, 0, 0, 0 };
+    unsigned char rightData[4] = { 0, 0, 0, 0 };
+    unsigned char bottomLeftData[4] = { 0, 0, 0, 0 };
+    unsigned char bottomData[4] = { 0, 0, 0, 0 };
+    unsigned char bottomRightData[4] = { 0, 0, 0, 0 };
+    int8_t *pixelData = malloc(sizeof(int8_t)*width*height*kPixelChannelCount);
+    for (NSInteger i = 0; i < width; i++) {
+        for (NSInteger j = 0; j < height; j++) {
+        
+            index = j * width + i;
+            if (i-sobelStep >= 0 && j-sobelStep >= 0) {
+                topLeftIndex = (j-sobelStep) * width + (i-sobelStep);
+                memcpy(topLeftData, bitmapData + kPixelChannelCount*topLeftIndex, kPixelChannelCount);
+            }else{
+                memset(topLeftData, 0, kPixelChannelCount);
+            }
+            
+            if (j-sobelStep >= 0) {
+                topIndex = (j-sobelStep) * width + (i);
+                memcpy(topData, bitmapData + kPixelChannelCount*topIndex, kPixelChannelCount);
+            }else{
+                memset(topData, 0, kPixelChannelCount);
+            }
+            
+            if (i+sobelStep <= width-1 && j-sobelStep >= 0) {
+                topRightIndex = (j-sobelStep) * width + (i+sobelStep);
+                memcpy(topRightData, bitmapData + kPixelChannelCount*topRightIndex, kPixelChannelCount);
+            }else{
+                memset(topRightData, 0, kPixelChannelCount);
+            }
+            
+            if (i-sobelStep >= 0) {
+                leftIndex = (j) * width + (i-sobelStep);
+                memcpy(leftData, bitmapData + kPixelChannelCount*leftIndex, kPixelChannelCount);
+            }else{
+                memset(leftData, 0, kPixelChannelCount);
+            }
+            
+            if (i+sobelStep <= width-1) {
+                rightIndex = (j) * width + (i+sobelStep);
+                memcpy(rightData, bitmapData + kPixelChannelCount*rightIndex, kPixelChannelCount);
+            }else{
+                memset(rightData, 0, kPixelChannelCount);
+            }
+            
+            if (i-sobelStep >=0 && j+sobelStep <= height-1) {
+                bottomLeftIndex = (j+sobelStep) * width + (i-sobelStep);
+                memcpy(bottomLeftData, bitmapData + kPixelChannelCount*bottomLeftIndex, kPixelChannelCount);
+            }else{
+                memset(bottomLeftData, 0, kPixelChannelCount);
+            }
+            
+            if (j+sobelStep <= height-1) {
+                bottomIndex = (j+sobelStep) * width + (i);
+                memcpy(bottomData, bitmapData + kPixelChannelCount*bottomIndex, kPixelChannelCount);
+            }else{
+                memset(bottomData, 0, kPixelChannelCount);
+            }
+            
+            if (i+sobelStep <= width-1 && j+sobelStep <= height-1) {
+                bottomRightIndex = (j+sobelStep) * width + (i+sobelStep);
+                memcpy(bottomRightData, bitmapData + kPixelChannelCount*bottomRightIndex, kPixelChannelCount);
+            }else{
+                memset(bottomRightData, 0, kPixelChannelCount);
+            }
+            
+            
+            double hr = -(double)topLeftData[0] - 2.0 * (double)topData[0] - (double)topRightData[0] + (double)bottomLeftData[0] + 2.0 * (double)bottomData[0] + (double)bottomRightData[0];
+            double hg = -(double)topLeftData[1] - 2.0 * (double)topData[1] - (double)topRightData[1] + (double)bottomLeftData[1] + 2.0 * (double)bottomData[1] + (double)bottomRightData[1];
+            double hb = -(double)topLeftData[2] - 2.0 * (double)topData[2] - (double)topRightData[2] + (double)bottomLeftData[2] + 2.0 * (double)bottomData[2] + (double)bottomRightData[2];
+            
+            double vr = -(double)topLeftData[0] - 2.0 * (double)leftData[0] - (double)bottomLeftData[0] + (double)topRightData[0] + 2.0 * (double)rightData[0] + (double)bottomRightData[0];
+            double vg = -(double)topLeftData[1] - 2.0 * (double)leftData[1] - (double)bottomLeftData[1] + (double)topRightData[1] + 2.0 * (double)rightData[1] + (double)bottomRightData[1];
+            double vb = -(double)topLeftData[2] - 2.0 * (double)leftData[2] - (double)bottomLeftData[2] + (double)topRightData[2] + 2.0 * (double)rightData[2] + (double)bottomRightData[2];
+            
+            //kRec709Luma = half3(0.2126, 0.7152, 0.0722);
+            double grayH = hr * 0.2126 + hg * 0.7152 + hb * 0.0722;
+            double grayV = vr * 0.2126 + vg * 0.7152 + vb * 0.0722;
+            
+            NSUInteger color = sqrt(grayH*grayH+grayV*grayV);
+            if (color > 255) {
+                color = 255;
+            }
+            unsigned char pixel[kPixelChannelCount] = {color, color, color, 255};
+            
+            memcpy(pixelData + kPixelChannelCount*index, pixel, kPixelChannelCount);
+        }
+    }
+    
+    memcpy(bitmapData, pixelData, width*height*kPixelChannelCount);
+    
+    NSInteger dataLength = width*height* kPixelChannelCount;
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, bitmapData, dataLength, NULL);
+    //创建要输出的图像
+    CGImageRef sobelImageRef = CGImageCreate(width, height,
+                                              kBitsPerComponent,
+                                              kBitsPerPixel,
+                                              width*kPixelChannelCount ,
+                                              colorSpace,
+                                              kCGBitmapByteOrderDefault,
+                                              provider,
+                                              NULL, NO,
+                                              kCGRenderingIntentDefault);
+    CGContextRef outputContext = CGBitmapContextCreate(nil,
+                                                       width,
+                                                       height,
+                                                       kBitsPerComponent,
+                                                       width*kPixelChannelCount,
+                                                       colorSpace,
+                                                       kCGImageAlphaPremultipliedLast);
+    CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), sobelImageRef);
+    CGImageRef resultImageRef = CGBitmapContextCreateImage(outputContext);
+    UIImage *resultImage = nil;
+    resultImage = [UIImage imageWithCGImage:resultImageRef scale:self.scale orientation:self.imageOrientation];
+    
+    //释放
+    CFRelease(resultImageRef);
+    CFRelease(sobelImageRef);
+    CGColorSpaceRelease(colorSpace);
+    CGDataProviderRelease(provider);
+    CGContextRelease(context);
+    CGContextRelease(outputContext);
+    free(pixelData);
+    
+    return resultImage;
+}
+
++ (NSArray *)azl_getEffectArray{
+    NSArray* filters =  [CIFilter filterNamesInCategory:kCICategoryColorEffect];
+//    for (NSString* filterName in filters) {
+//        NSLog(@"filter name:%@",filterName);
+//        // 我们可以通过filterName创建对应的滤镜对象
+////        CIFilter* filter = [CIFilter filterWithName:filterName];
+////        NSDictionary* attributes = [filter attributes];
+////        // 获取属性键/值对（在这个字典中我们可以看到滤镜的属性以及对应的key）
+////        NSLog(@"filter attributes:%@",attributes);
+//    }
+    
+    return filters;
+}
+
+
+- (UIImage *)azl_imageFromFilterName:(NSString*)filterName{
+    // 创建输入CIImage对象
+    CIImage * inputImg = [CIImage imageWithCGImage:self.CGImage];
+    // 创建滤镜
+    CIFilter * filter = [CIFilter filterWithName:filterName];
+    // 设置滤镜属性值为默认值
+    [filter setDefaults];
+    // 设置输入图像
+    [filter setValue:inputImg forKey:kCIInputImageKey];
+    // 获取输出图像
+    CIImage * outputImg = filter.outputImage;
+    
+    // 创建CIContex上下文对象
+    CIContext * context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImg = [context createCGImage:outputImg fromRect:outputImg.extent];
+    UIImage *resultImg = [UIImage imageWithCGImage:cgImg scale:self.scale orientation:self.imageOrientation];
+    CGImageRelease(cgImg);
+    
+    return resultImg;
+}
 
 @end

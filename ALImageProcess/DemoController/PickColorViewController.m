@@ -20,6 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+//    UIView *maskView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
+//    
+//    maskView.backgroundColor = [UIColor greenColor];
+//    CAGradientLayer *graLayer = [[CAGradientLayer alloc] init];
+//    graLayer.frame = CGRectMake(0, 0, 100, 50);
+//    graLayer.colors = @[(id)[UIColor colorWithWhite:1 alpha:1].CGColor, (id)[UIColor colorWithWhite:1 alpha:0.1].CGColor];
+//    graLayer.locations = @[@(0.8), @(1)];
+//    
+//    maskView.layer.mask = graLayer;
+//    //[maskView.layer addSublayer:graLayer];
+//    
+//    [self.view addSubview:maskView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +48,7 @@
     UIColor *pickColor = [snapImage azl_colorFromPoint:touchPoint];
     
     self.colorView.backgroundColor = pickColor;
+    
     
 }
 

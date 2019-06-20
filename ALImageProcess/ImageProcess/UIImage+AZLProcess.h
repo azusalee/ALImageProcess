@@ -55,10 +55,15 @@
 ///返回一張alpha值翻轉的圖（返回圖片只有alpha通道的值）
 - (UIImage *)azl_reverseAlpha;
 
+///边缘描边图
+- (UIImage *)azl_sobelBorderImage;
 
-//+ (NSArray*)azl_getEffectArray;
-//
-//- (UIImage *)azl_imageFromFilterName:(NSString*)filterName;
+
++ (NSArray*)azl_getEffectArray;
+
+- (UIImage *)azl_imageFromFilterName:(NSString*)filterName;
+
+
 
 
 @end

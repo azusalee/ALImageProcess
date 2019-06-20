@@ -53,6 +53,22 @@
         [self.dataArray addObject:model];
     }
     
+    {
+        JumpVCModel *model = [[JumpVCModel alloc] init];
+        model.title = @"渐变色";
+        model.vcName = @"GradientViewController";
+        [self.dataArray addObject:model];
+    }
+    
+    {
+        JumpVCModel *model = [[JumpVCModel alloc] init];
+        model.title = @"描边处理";
+        model.vcName = @"BorderEffectViewController";
+        [self.dataArray addObject:model];
+    }
+    
+    
+    
 }
 
 
