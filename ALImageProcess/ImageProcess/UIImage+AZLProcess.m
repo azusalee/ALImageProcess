@@ -607,10 +607,10 @@
         }
     }
     
-    memcpy(bitmapData, pixelData, width*height*kPixelChannelCount);
+    //memcpy(bitmapData, pixelData, width*height*kPixelChannelCount);
     
     NSInteger dataLength = width*height* kPixelChannelCount;
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, bitmapData, dataLength, NULL);
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, pixelData, dataLength, NULL);
     //创建要输出的图像
     CGImageRef sobelImageRef = CGImageCreate(width, height,
                                               kBitsPerComponent,
