@@ -113,6 +113,7 @@
     CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, CGRectMake(clipRect.origin.x*self.scale, clipRect.origin.y*self.scale, clipRect.size.width*self.scale, clipRect.size.height*self.scale));
 
     UIImage *clipImage = [UIImage imageWithCGImage:subImageRef scale:self.scale orientation:self.imageOrientation];
+    CGImageRelease(subImageRef);
     
     return clipImage;
 }
@@ -489,6 +490,7 @@
     }
     
     free(pixelData);
+    CGColorSpaceRelease(colorSpace);
     
     return (double)alphaPixelCount/(double)bitmapByteCount;
 }
