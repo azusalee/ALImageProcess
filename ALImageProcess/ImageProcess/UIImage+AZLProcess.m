@@ -166,7 +166,7 @@
     boxSize = boxSize - (boxSize % 2) + 1;
     CGImageRef img = image.CGImage;
     vImage_Buffer inBuffer, outBuffer;
-    vImage_Error error;
+    //vImage_Error error;
     void *pixelBuffer;
     //从CGImage中获取数据
     CGDataProviderRef inProvider = CGImageGetDataProvider(img);
@@ -185,13 +185,13 @@
     outBuffer.rowBytes = CGImageGetBytesPerRow(img);
     
     //模糊處理
-    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
-    error = vImageBoxConvolve_ARGB8888(&outBuffer, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
-    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    vImageBoxConvolve_ARGB8888(&outBuffer, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     
-    if (error) {
-        NSLog(@"error from convolution %ld", error);
-    }
+//    if (error) {
+//        NSLog(@"error from convolution %ld", error);
+//    }
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef ctx = CGBitmapContextCreate( outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);
     
@@ -287,6 +287,79 @@
     
     return resultImage;
 }
+
+//- (UIImage *)azl_imageFromHexagonMosaicLevel:(NSUInteger)level
+//{
+//    
+//    UIImage *orginImage = self;
+//    //获取BitmapData
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGImageRef imgRef = orginImage.CGImage;
+//    CGFloat width = CGImageGetWidth(imgRef);
+//    CGFloat height = CGImageGetHeight(imgRef);
+//    CGContextRef context = CGBitmapContextCreate (nil,
+//                                                  width,
+//                                                  height,
+//                                                  kBitsPerComponent,        //每个颜色值8bit
+//                                                  width*kPixelChannelCount, //每一行的像素点占用的字节数，每个像素点的ARGB四个通道各占8个bit
+//                                                  colorSpace,
+//                                                  kCGImageAlphaPremultipliedLast);
+//    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imgRef);
+//    unsigned char *bitmapData = CGBitmapContextGetData (context);
+//    
+//    //这里把BitmapData进行马赛克转换,就是用一个点的颜色填充一个level*level的正方形
+//    unsigned char pixel[kPixelChannelCount] = {0};
+//    NSUInteger index,preIndex;
+//    for (NSUInteger i = 0; i < height - 1 ; i++) {
+//        for (NSUInteger j = 0; j < width - 1; j++) {
+//            index = i * width + j;
+//            if (i % level == 0) {
+//                if (j % level == 0) {
+//                    memcpy(pixel, bitmapData + kPixelChannelCount*index, kPixelChannelCount);
+//                }else{
+//                    memcpy(bitmapData + kPixelChannelCount*index, pixel, kPixelChannelCount);
+//                }
+//            } else {
+//                preIndex = (i-1)*width +j;
+//                memcpy(bitmapData + kPixelChannelCount*index, bitmapData + kPixelChannelCount*preIndex, kPixelChannelCount);
+//            }
+//        }
+//    }
+//    
+//    NSInteger dataLength = width*height* kPixelChannelCount;
+//    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, bitmapData, dataLength, NULL);
+//    //创建要输出的图像
+//    CGImageRef mosaicImageRef = CGImageCreate(width, height,
+//                                              kBitsPerComponent,
+//                                              kBitsPerPixel,
+//                                              width*kPixelChannelCount ,
+//                                              colorSpace,
+//                                              kCGBitmapByteOrderDefault,
+//                                              provider,
+//                                              NULL, NO,
+//                                              kCGRenderingIntentDefault);
+//    CGContextRef outputContext = CGBitmapContextCreate(nil,
+//                                                       width,
+//                                                       height,
+//                                                       kBitsPerComponent,
+//                                                       width*kPixelChannelCount,
+//                                                       colorSpace,
+//                                                       kCGImageAlphaPremultipliedLast);
+//    CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), mosaicImageRef);
+//    CGImageRef resultImageRef = CGBitmapContextCreateImage(outputContext);
+//    UIImage *resultImage = nil;
+//    resultImage = [UIImage imageWithCGImage:resultImageRef scale:self.scale orientation:self.imageOrientation];
+//    
+//    //释放
+//    CFRelease(resultImageRef);
+//    CFRelease(mosaicImageRef);
+//    CGColorSpaceRelease(colorSpace);
+//    CGDataProviderRelease(provider);
+//    CGContextRelease(context);
+//    CGContextRelease(outputContext);
+//    
+//    return resultImage;
+//}
 
 - (UIImage *)azl_imageFromRotate:(CGFloat)rotateAngle{
     
@@ -455,7 +528,8 @@
     UIImage *result = [UIImage imageWithCGImage:reverseAlphaImage];
     
     free(pixelData);
-    CFRelease(reverseAlphaImage);
+    CGImageRelease(reverseAlphaImage);
+    CGContextRelease(context);
     
     return result;
 }
@@ -513,7 +587,7 @@
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), imgRef);
     unsigned char *bitmapData = CGBitmapContextGetData (context);
     
-    //查找边缘像素
+    //sobel算子计算
     //unsigned char pixel[kPixelChannelCount] = {0};
     NSInteger sobelStep = 2;
     NSInteger index,topLeftIndex,topIndex,topRightIndex,leftIndex,rightIndex,bottomLeftIndex,bottomIndex,bottomRightIndex;
@@ -600,12 +674,24 @@
             double grayV = vr * 0.2126 + vg * 0.7152 + vb * 0.0722;
             
             NSUInteger color = sqrt(grayH*grayH+grayV*grayV);
+            
+            //灰度输出
             if (color > 255) {
                 color = 255;
             }
             unsigned char pixel[kPixelChannelCount] = {color, color, color, 255};
             
             memcpy(pixelData + kPixelChannelCount*index, pixel, kPixelChannelCount);
+            
+            //在边缘位置描白边
+//            if (color > 153) {
+//                color = 255;
+//                unsigned char pixel[kPixelChannelCount] = {color, color, color, 255};
+//                
+//                memcpy(pixelData + kPixelChannelCount*index, pixel, kPixelChannelCount);
+//            }else{
+//                memcpy(pixelData + kPixelChannelCount*index, bitmapData + kPixelChannelCount*index, kPixelChannelCount);
+//            }
         }
     }
     
