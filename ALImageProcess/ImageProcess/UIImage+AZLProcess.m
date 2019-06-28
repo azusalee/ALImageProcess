@@ -513,7 +513,6 @@
     CGRect rect = CGRectMake(0, 0, width, height);
     CGContextClearRect(context, rect);
     CGContextDrawImage(context, rect, self.CGImage);
-    CGContextRelease(context);
     
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
