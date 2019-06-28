@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"jpg"];
+    NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"lenapicalpha" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:imgPath];
     self.imageView.image = [image azl_sobelBorderImage];
 }

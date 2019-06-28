@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */; };
 		8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66105D22BB768200415B37 /* BorderEffectViewController.m */; };
 		8C66106022BB768200415B37 /* BorderEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C66105E22BB768200415B37 /* BorderEffectViewController.xib */; };
 		8C66106222BB817100415B37 /* lenapic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66106122BB817100415B37 /* lenapic.png */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lenapicalpha.png; sourceTree = "<group>"; };
 		8C66105C22BB768200415B37 /* BorderEffectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderEffectViewController.h; sourceTree = "<group>"; };
 		8C66105D22BB768200415B37 /* BorderEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderEffectViewController.m; sourceTree = "<group>"; };
 		8C66105E22BB768200415B37 /* BorderEffectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorderEffectViewController.xib; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				8C66106522BB925400415B37 /* whitepic.png */,
 				8C66106322BB842400415B37 /* sample.jpg */,
 				8C66106122BB817100415B37 /* lenapic.png */,
+				8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */,
 				8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */,
 				8CF22F7722A10DE200BAA867 /* laimg3@2x.png */,
 			);
@@ -261,6 +264,7 @@
 				8CF22F7A22A10DE300BAA867 /* laimg2@2x.jpeg in Resources */,
 				8CF22F7522A10D9300BAA867 /* AZLImageProcess.bundle in Resources */,
 				8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */,
+				8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */,
 				8C66106422BB842400415B37 /* sample.jpg in Resources */,
 				8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */,
 				8CF22F6D22A10C9200BAA867 /* PicProcessViewController.xib in Resources */,
