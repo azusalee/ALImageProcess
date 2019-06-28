@@ -9,6 +9,10 @@
 #import "UIImage+AZLProcess.h"
 #import <Accelerate/Accelerate.h>
 
+#define kBitsPerComponent (8)
+#define kBitsPerPixel (32)
+#define kPixelChannelCount (4)
+
 @implementation UIImage (AZLProcess)
 
 + (UIImage *)azl_imageFromFilePath:(NSString *)path size:(CGSize)pointSize{
@@ -156,6 +160,66 @@
     return grayImage;
 }
 
+
+//灰度渐隐
+- (UIImage *)azl_grayAlphaImage{
+
+    UIImage *orginImage = self;
+    //获取BitmapData
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef imgRef = orginImage.CGImage;
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    
+    int8_t * bitmapData = malloc(sizeof(int8_t)*width*height*kPixelChannelCount);
+    CGContextRef context = CGBitmapContextCreate (bitmapData,
+                                                  width,
+                                                  height,
+                                                  kBitsPerComponent,        //每个颜色值8bit
+                                                  width*kPixelChannelCount, //每一行的像素点占用的字节数，每个像素点的RGBA四个通道各占8个bit
+                                                  colorSpace,
+                                                  kCGImageAlphaPremultipliedLast);
+    
+    CGRect rect = CGRectMake(0, 0, width, height);
+    CGContextClearRect(context, rect);
+    CGContextDrawImage(context, rect, imgRef);
+    
+    NSInteger index;
+    unsigned char pixData[4] = { 0, 0, 0, 0 };
+    for (NSInteger i = 0; i < width; i++) {
+        for (NSInteger j = 0; j < height; j++) {
+            index = j * width + i;
+            memcpy(pixData, bitmapData + kPixelChannelCount*index, kPixelChannelCount);
+            
+            unsigned char r = bitmapData[index*kPixelChannelCount];
+            unsigned char g = bitmapData[index*kPixelChannelCount+1];
+            unsigned char b = bitmapData[index*kPixelChannelCount+2];
+            
+            //kRec709Luma = half3(0.2126, 0.7152, 0.0722);
+            double gray = r * 0.2126 + g * 0.7152 + b * 0.0722;
+            
+            //灰度输出
+            if (gray > 255) {
+                gray = 255;
+            }
+            
+            bitmapData[index*kPixelChannelCount] = gray;
+            bitmapData[index*kPixelChannelCount+1] = gray;
+            bitmapData[index*kPixelChannelCount+2] = gray;
+            bitmapData[index*kPixelChannelCount+3] = gray;
+        }
+    }
+    
+    CGImageRef cgImage = CGBitmapContextCreateImage(context);
+    UIImage *resultImage = [UIImage imageWithCGImage:cgImage];
+    
+    free(bitmapData);
+    CGImageRelease(cgImage);
+    CGContextRelease(context);
+    
+    return resultImage;
+}
+
 //需要引入Accelerate.Framework，#import <Accelerate/Accelerate.h>
 - (UIImage *)azl_imageFromBoxBlur:(CGFloat)blur{
     UIImage *image = self;
@@ -213,9 +277,6 @@
     return returnImage;
 }
 
-#define kBitsPerComponent (8)
-#define kBitsPerPixel (32)
-#define kPixelChannelCount (4)
 - (UIImage *)azl_imageFromMosaicLevel:(NSUInteger)level
 {
     UIImage *orginImage = self;
@@ -696,36 +757,23 @@
     
     //memcpy(bitmapData, pixelData, width*height*kPixelChannelCount);
     
-    NSInteger dataLength = width*height* kPixelChannelCount;
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, pixelData, dataLength, NULL);
-    //创建要输出的图像
-    CGImageRef sobelImageRef = CGImageCreate(width, height,
-                                              kBitsPerComponent,
-                                              kBitsPerPixel,
-                                              width*kPixelChannelCount ,
-                                              colorSpace,
-                                              kCGBitmapByteOrderDefault,
-                                              provider,
-                                              NULL, NO,
-                                              kCGRenderingIntentDefault);
-    CGContextRef outputContext = CGBitmapContextCreate(nil,
+    CGContextRelease(context);
+    
+    CGContextRef outputContext = CGBitmapContextCreate(pixelData,
                                                        width,
                                                        height,
                                                        kBitsPerComponent,
                                                        width*kPixelChannelCount,
                                                        colorSpace,
                                                        kCGImageAlphaPremultipliedLast);
-    CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), sobelImageRef);
     CGImageRef resultImageRef = CGBitmapContextCreateImage(outputContext);
     UIImage *resultImage = nil;
+    // 需要这样才能正常导出图片，直接用sobelImageRef会生成全黑的图
     resultImage = [UIImage imageWithCGImage:resultImageRef scale:self.scale orientation:self.imageOrientation];
     
     //释放
     CFRelease(resultImageRef);
-    CFRelease(sobelImageRef);
     CGColorSpaceRelease(colorSpace);
-    CGDataProviderRelease(provider);
-    CGContextRelease(context);
     CGContextRelease(outputContext);
     free(pixelData);
     

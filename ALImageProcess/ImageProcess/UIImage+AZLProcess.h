@@ -33,6 +33,8 @@
 - (UIImage *)azl_imageClipCircleFromRect:(CGRect)clipRect;
 ///生成灰度圖
 - (UIImage *)azl_grayImage;
+///灰度渐隐
+- (UIImage *)azl_grayAlphaImage;
 ///生成模糊圖
 - (UIImage *)azl_imageFromBoxBlur:(CGFloat)blur;
 ///生成馬賽克圖

@@ -29,7 +29,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="1" blue="0.22308433220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Gno-5E-vgl" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="15" id="WI7-05-lAl"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Gno-5E-vgl" secondAttribute="trailing" constant="15" id="xX3-ZF-m3X"/>
