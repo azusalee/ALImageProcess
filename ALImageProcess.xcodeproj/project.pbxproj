@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */; };
+		8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */; };
+		8C42FD3022C5EC0A0090B6B4 /* PhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2E22C5EC0A0090B6B4 /* PhotoBrowserViewController.xib */; };
 		8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66105D22BB768200415B37 /* BorderEffectViewController.m */; };
 		8C66106022BB768200415B37 /* BorderEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C66105E22BB768200415B37 /* BorderEffectViewController.xib */; };
 		8C66106222BB817100415B37 /* lenapic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66106122BB817100415B37 /* lenapic.png */; };
@@ -39,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lenapicalpha.png; sourceTree = "<group>"; };
+		8C42FD2C22C5EC0A0090B6B4 /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
+		8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
+		8C42FD2E22C5EC0A0090B6B4 /* PhotoBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoBrowserViewController.xib; sourceTree = "<group>"; };
 		8C66105C22BB768200415B37 /* BorderEffectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderEffectViewController.h; sourceTree = "<group>"; };
 		8C66105D22BB768200415B37 /* BorderEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderEffectViewController.m; sourceTree = "<group>"; };
 		8C66105E22BB768200415B37 /* BorderEffectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorderEffectViewController.xib; sourceTree = "<group>"; };
@@ -178,6 +183,9 @@
 				8C66105C22BB768200415B37 /* BorderEffectViewController.h */,
 				8C66105D22BB768200415B37 /* BorderEffectViewController.m */,
 				8C66105E22BB768200415B37 /* BorderEffectViewController.xib */,
+				8C42FD2C22C5EC0A0090B6B4 /* PhotoBrowserViewController.h */,
+				8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */,
+				8C42FD2E22C5EC0A0090B6B4 /* PhotoBrowserViewController.xib */,
 				8C82AAD922B8DE8400086C7A /* MyGradientView.h */,
 				8C82AADA22B8DE8400086C7A /* MyGradientView.m */,
 			);
@@ -266,6 +274,7 @@
 				8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */,
 				8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */,
 				8C66106422BB842400415B37 /* sample.jpg in Resources */,
+				8C42FD3022C5EC0A0090B6B4 /* PhotoBrowserViewController.xib in Resources */,
 				8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */,
 				8CF22F6D22A10C9200BAA867 /* PicProcessViewController.xib in Resources */,
 				8CF22F7922A10DE300BAA867 /* laimg3@2x.png in Resources */,
@@ -281,6 +290,7 @@
 			files = (
 				8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */,
 				8CF22F6F22A10C9200BAA867 /* PicProcessViewController.m in Sources */,
+				8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */,
 				8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */,
 				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
 				8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */,

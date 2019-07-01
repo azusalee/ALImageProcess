@@ -314,35 +314,21 @@
         }
     }
     
-    NSInteger dataLength = width*height* kPixelChannelCount;
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, bitmapData, dataLength, NULL);
-    //创建要输出的图像
-    CGImageRef mosaicImageRef = CGImageCreate(width, height,
-                                              kBitsPerComponent,
-                                              kBitsPerPixel,
-                                              width*kPixelChannelCount ,
-                                              colorSpace,
-                                              kCGBitmapByteOrderDefault,
-                                              provider,
-                                              NULL, NO,
-                                              kCGRenderingIntentDefault);
-    CGContextRef outputContext = CGBitmapContextCreate(nil,
+    CGContextRef outputContext = CGBitmapContextCreate(bitmapData,
                                                        width,
                                                        height,
                                                        kBitsPerComponent,
                                                        width*kPixelChannelCount,
                                                        colorSpace,
                                                        kCGImageAlphaPremultipliedLast);
-    CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), mosaicImageRef);
+    //CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), mosaicImageRef);
     CGImageRef resultImageRef = CGBitmapContextCreateImage(outputContext);
     UIImage *resultImage = nil;
     resultImage = [UIImage imageWithCGImage:resultImageRef scale:self.scale orientation:self.imageOrientation];
     
     //释放
     CFRelease(resultImageRef);
-    CFRelease(mosaicImageRef);
     CGColorSpaceRelease(colorSpace);
-    CGDataProviderRelease(provider);
     CGContextRelease(context);
     CGContextRelease(outputContext);
     

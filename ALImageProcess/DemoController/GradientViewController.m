@@ -11,6 +11,8 @@
 
 @interface GradientViewController ()
 @property (weak, nonatomic) IBOutlet MyGradientView *gradientView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -19,6 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    CAGradientLayer *graLayer = [[CAGradientLayer alloc] init];
+    graLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64);
+    graLayer.colors = @[(__bridge id)[UIColor colorWithWhite:1 alpha:1].CGColor,
+                        (__bridge id)[UIColor colorWithWhite:1 alpha:1].CGColor,
+                        (__bridge id)[UIColor colorWithWhite:1 alpha:0.1].CGColor,
+                        ];
+    graLayer.locations = @[@(0), @(0.9), @(1)];
+    self.containerView.layer.mask = graLayer;
+    
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 1200);
 }
 
 /*

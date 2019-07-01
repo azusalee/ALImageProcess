@@ -67,6 +67,13 @@
         [self.dataArray addObject:model];
     }
     
+    {
+        JumpVCModel *model = [[JumpVCModel alloc] init];
+        model.title = @"图片浏览";
+        model.vcName = @"PhotoBrowserViewController";
+        [self.dataArray addObject:model];
+    }
+    
     
     
 }
