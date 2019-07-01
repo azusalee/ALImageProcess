@@ -28,7 +28,7 @@
                         (__bridge id)[UIColor colorWithWhite:1 alpha:1].CGColor,
                         (__bridge id)[UIColor colorWithWhite:1 alpha:0.1].CGColor,
                         ];
-    graLayer.locations = @[@(0), @(0.9), @(1)];
+    graLayer.locations = @[@(0), @(0.8), @(1)];
     self.containerView.layer.mask = graLayer;
     
     self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 1200);
