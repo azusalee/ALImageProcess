@@ -216,6 +216,7 @@
     free(bitmapData);
     CGImageRelease(cgImage);
     CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
     
     return resultImage;
 }
@@ -576,6 +577,7 @@
     free(pixelData);
     CGImageRelease(reverseAlphaImage);
     CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
     
     return result;
 }
