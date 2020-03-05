@@ -97,6 +97,19 @@
     return shotImage;
 }
 
+// 不能这么干
+//+ (UIImage *)azl_imageFromScrollView:(UIScrollView *)view{
+//    CGFloat scale = [UIScreen mainScreen].scale;
+//    UIGraphicsBeginImageContextWithOptions(view.contentSize, NO, scale);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [view.layer renderInContext:context];
+//    
+//    UIImage *shotImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return shotImage;
+//}
+
 - (UIImage *)azl_imageFromSize:(CGSize)size{
     UIGraphicsBeginImageContextWithOptions(size, NO, self.scale);
     

@@ -74,6 +74,12 @@
         [self.dataArray addObject:model];
     }
     
+    {
+        JumpVCModel *model = [[JumpVCModel alloc] init];
+        model.title = @"列表测试";
+        model.vcName = @"MyListViewController";
+        [self.dataArray addObject:model];
+    }
     
     
 }

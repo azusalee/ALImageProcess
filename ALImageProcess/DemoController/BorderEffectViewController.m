@@ -11,6 +11,7 @@
 
 @interface BorderEffectViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *myView;
 
 @end
 
@@ -22,6 +23,13 @@
     NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"lenapicalpha" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:imgPath];
     self.imageView.image = [image azl_sobelBorderImage];
+    
+    UIImage *myimage = [UIImage azl_imageFromView:self.myView];
+    NSData *imageData =  UIImagePNGRepresentation(myimage);
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    filePath = [filePath stringByAppendingPathComponent:@"sourceNum.png"];
+    NSLog(@"%@", filePath);
+    [imageData writeToFile:filePath atomically:YES];
 }
 
 /*
