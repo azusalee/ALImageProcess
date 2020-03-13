@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSString *originUrl;
+
+- (void)setImageWidth:(CGFloat)width height:(CGFloat)height;
 
 @end
 

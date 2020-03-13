@@ -160,13 +160,16 @@
     // Do any additional setup after loading the view.
     self.view.frame = [UIScreen mainScreen].bounds;
     self.view.backgroundColor = [UIColor blackColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
+    layout.sectionInset = UIEdgeInsetsZero;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
     
     self.photoCollectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.photoCollectionView.contentInset = UIEdgeInsetsZero;
     self.photoCollectionView.backgroundColor = [UIColor clearColor];
     self.photoCollectionView.showsVerticalScrollIndicator = NO;
     self.photoCollectionView.showsHorizontalScrollIndicator = NO;
@@ -178,15 +181,10 @@
     [self.view addSubview:self.photoCollectionView];
     [self.photoCollectionView setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width*self.showingIndex, 0)];
     
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewDidTap:)];
-    [self.view addGestureRecognizer:tapGes];
+    
 }
 
-- (void)viewDidTap:(UITapGestureRecognizer*)gesture{
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
+
 
 #pragma mark - Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -202,7 +200,9 @@
 {
     ALPhotoBroserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALPhotoBroserCollectionViewCell" forIndexPath:indexPath];
     ALPhotoBrowserModel *model = self.dataArray[indexPath.row];
+    cell.originUrl = model.originUrlString;
     [cell.scrollView setZoomScale:1];
+    [cell setImageWidth:model.width height:model.height];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.originUrlString] placeholderImage:model.placeholdImage];
     
     return cell;

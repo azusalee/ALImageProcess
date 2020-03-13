@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8C0FDA3522EEF611004D0090 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0FDA3322EEF611004D0090 /* MyListViewController.m */; };
 		8C0FDA3622EEF611004D0090 /* MyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0FDA3422EEF611004D0090 /* MyListViewController.xib */; };
-		8C379C64240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C379C63240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.m */; };
 		8C379C68240F904D007BCD6F /* ALPhotoBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C379C67240F904D007BCD6F /* ALPhotoBrowserModel.m */; };
 		8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */; };
 		8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */; };
@@ -349,7 +348,6 @@
 				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,
 				8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */,
 				8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */,
-				8C379C64240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.m in Sources */,
 				8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */,
 				8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */,
 			);
