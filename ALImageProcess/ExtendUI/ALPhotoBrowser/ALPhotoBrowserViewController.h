@@ -10,12 +10,18 @@
 #import "ALPhotoBrowserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-/// 这个类用到了第三方库SDWebImage
-@interface ALPhotoBroserViewController : UIViewController
+
+typedef enum : NSUInteger {
+    ALPhotoBrowserModeNormal = 0,
+    ALPhotoBrowserModeEdit
+} ALPhotoBrowserMode;
+
+@interface ALPhotoBrowserViewController : UIViewController
 
 @property (nonatomic, strong) UICollectionView *photoCollectionView;
 @property (nonatomic, assign) CGRect fromRect;
 @property (nonatomic, assign) NSInteger showingIndex;
+@property (nonatomic, assign) ALPhotoBrowserMode mode;
 
 - (void)showWithPhotoModels:(NSArray<ALPhotoBrowserModel*> *)photoArray index:(NSInteger)index fromRect:(CGRect)fromRect;
 

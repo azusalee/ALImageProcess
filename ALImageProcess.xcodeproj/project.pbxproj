@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049B6B6261E5B4195F999CF4 /* Pods_ALImageProcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0771444571DF029703838E /* Pods_ALImageProcess.framework */; };
 		8C0FDA3522EEF611004D0090 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0FDA3322EEF611004D0090 /* MyListViewController.m */; };
 		8C0FDA3622EEF611004D0090 /* MyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0FDA3422EEF611004D0090 /* MyListViewController.xib */; };
-		8C379C68240F904D007BCD6F /* ALPhotoBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C379C67240F904D007BCD6F /* ALPhotoBrowserModel.m */; };
 		8C42FD2B22C5B99D0090B6B4 /* lenapicalpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */; };
 		8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */; };
 		8C42FD3022C5EC0A0090B6B4 /* PhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C42FD2E22C5EC0A0090B6B4 /* PhotoBrowserViewController.xib */; };
@@ -21,6 +21,10 @@
 		8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AAD522B8DE2500086C7A /* GradientViewController.m */; };
 		8C82AAD822B8DE2500086C7A /* GradientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C82AAD622B8DE2500086C7A /* GradientViewController.xib */; };
 		8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AADA22B8DE8400086C7A /* MyGradientView.m */; };
+		8CC2F752242A113C007DACBB /* ALPhotoBroserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74A242A113C007DACBB /* ALPhotoBroserCollectionViewCell.m */; };
+		8CC2F753242A113C007DACBB /* ALPhotoBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */; };
+		8CC2F754242A113C007DACBB /* ALPhotoBrowserEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */; };
+		8CC2F755242A113C007DACBB /* ALPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */; };
 		8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3722A10B2C00BAA867 /* AppDelegate.m */; };
 		8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3A22A10B2C00BAA867 /* ViewController.m */; };
 		8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3C22A10B2C00BAA867 /* Main.storyboard */; };
@@ -43,15 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		680BCC0D492292FEB08F36FE /* Pods-ALImageProcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALImageProcess.debug.xcconfig"; path = "Target Support Files/Pods-ALImageProcess/Pods-ALImageProcess.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0FDA3222EEF611004D0090 /* MyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListViewController.h; sourceTree = "<group>"; };
 		8C0FDA3322EEF611004D0090 /* MyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListViewController.m; sourceTree = "<group>"; };
 		8C0FDA3422EEF611004D0090 /* MyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyListViewController.xib; sourceTree = "<group>"; };
-		8C379C5E240F88EF007BCD6F /* ALPhotoBroserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPhotoBroserViewController.h; sourceTree = "<group>"; };
-		8C379C5F240F88EF007BCD6F /* ALPhotoBroserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBroserViewController.m; sourceTree = "<group>"; };
-		8C379C62240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPhotoBroserCollectionViewCell.h; sourceTree = "<group>"; };
-		8C379C63240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBroserCollectionViewCell.m; sourceTree = "<group>"; };
-		8C379C66240F904D007BCD6F /* ALPhotoBrowserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserModel.h; sourceTree = "<group>"; };
-		8C379C67240F904D007BCD6F /* ALPhotoBrowserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserModel.m; sourceTree = "<group>"; };
 		8C42FD2A22C5B99C0090B6B4 /* lenapicalpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lenapicalpha.png; sourceTree = "<group>"; };
 		8C42FD2C22C5EC0A0090B6B4 /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
 		8C42FD2D22C5EC0A0090B6B4 /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
@@ -67,6 +66,14 @@
 		8C82AAD622B8DE2500086C7A /* GradientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientViewController.xib; sourceTree = "<group>"; };
 		8C82AAD922B8DE8400086C7A /* MyGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGradientView.h; sourceTree = "<group>"; };
 		8C82AADA22B8DE8400086C7A /* MyGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGradientView.m; sourceTree = "<group>"; };
+		8CC2F747242A113C007DACBB /* ALPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		8CC2F749242A113C007DACBB /* ALPhotoBroserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBroserCollectionViewCell.h; sourceTree = "<group>"; };
+		8CC2F74A242A113C007DACBB /* ALPhotoBroserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBroserCollectionViewCell.m; sourceTree = "<group>"; };
+		8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserModel.m; sourceTree = "<group>"; };
+		8CC2F74D242A113C007DACBB /* ALPhotoBrowserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserModel.h; sourceTree = "<group>"; };
+		8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserEditView.m; sourceTree = "<group>"; };
+		8CC2F750242A113C007DACBB /* ALPhotoBrowserEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserEditView.h; sourceTree = "<group>"; };
+		8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALImageProcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF22F3622A10B2C00BAA867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CF22F3722A10B2C00BAA867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +104,8 @@
 		8CF22F7122A10D4800BAA867 /* JumpVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpVCModel.m; sourceTree = "<group>"; };
 		8CF22F7722A10DE200BAA867 /* laimg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laimg3@2x.png"; sourceTree = "<group>"; };
 		8CF22F7822A10DE200BAA867 /* laimg2@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "laimg2@2x.jpeg"; sourceTree = "<group>"; };
+		CB0771444571DF029703838E /* Pods_ALImageProcess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALImageProcess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB26F16CAB9CBCEB07A67D2C /* Pods-ALImageProcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALImageProcess.release.xcconfig"; path = "Target Support Files/Pods-ALImageProcess/Pods-ALImageProcess.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,39 +113,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049B6B6261E5B4195F999CF4 /* Pods_ALImageProcess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C379C5D240F88C0007BCD6F /* ALPhotoBrowser */ = {
+		8CC2F746242A113C007DACBB /* ALPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				8C379C65240F9012007BCD6F /* Model */,
-				8C379C61240F891F007BCD6F /* Cell */,
-				8C379C5E240F88EF007BCD6F /* ALPhotoBroserViewController.h */,
-				8C379C5F240F88EF007BCD6F /* ALPhotoBroserViewController.m */,
+				8CC2F747242A113C007DACBB /* ALPhotoBrowserViewController.h */,
+				8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */,
+				8CC2F748242A113C007DACBB /* Cell */,
+				8CC2F74B242A113C007DACBB /* Model */,
+				8CC2F74E242A113C007DACBB /* View */,
 			);
 			path = ALPhotoBrowser;
 			sourceTree = "<group>";
 		};
-		8C379C61240F891F007BCD6F /* Cell */ = {
+		8CC2F748242A113C007DACBB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8C379C62240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.h */,
-				8C379C63240F893B007BCD6F /* ALPhotoBroserCollectionViewCell.m */,
+				8CC2F749242A113C007DACBB /* ALPhotoBroserCollectionViewCell.h */,
+				8CC2F74A242A113C007DACBB /* ALPhotoBroserCollectionViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		8C379C65240F9012007BCD6F /* Model */ = {
+		8CC2F74B242A113C007DACBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8C379C66240F904D007BCD6F /* ALPhotoBrowserModel.h */,
-				8C379C67240F904D007BCD6F /* ALPhotoBrowserModel.m */,
+				8CC2F74D242A113C007DACBB /* ALPhotoBrowserModel.h */,
+				8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8CC2F74E242A113C007DACBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CC2F750242A113C007DACBB /* ALPhotoBrowserEditView.h */,
+				8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8CF22F2A22A10B2C00BAA867 = {
@@ -144,6 +164,8 @@
 			children = (
 				8CF22F3522A10B2C00BAA867 /* ALImageProcess */,
 				8CF22F3422A10B2C00BAA867 /* Products */,
+				E79E390B94712788B61DA8AA /* Pods */,
+				D7F6118D94A90C7AFF548377 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,7 +211,7 @@
 		8CF22F5022A10BE000BAA867 /* ExtendUI */ = {
 			isa = PBXGroup;
 			children = (
-				8C379C5D240F88C0007BCD6F /* ALPhotoBrowser */,
+				8CC2F746242A113C007DACBB /* ALPhotoBrowser */,
 				8CF22F5F22A10C2800BAA867 /* AZLImageProcess.bundle */,
 				8CF22F5A22A10C2800BAA867 /* View */,
 			);
@@ -250,6 +272,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D7F6118D94A90C7AFF548377 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB0771444571DF029703838E /* Pods_ALImageProcess.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E79E390B94712788B61DA8AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				680BCC0D492292FEB08F36FE /* Pods-ALImageProcess.debug.xcconfig */,
+				DB26F16CAB9CBCEB07A67D2C /* Pods-ALImageProcess.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CF22F4922A10B2E00BAA867 /* Build configuration list for PBXNativeTarget "ALImageProcess" */;
 			buildPhases = (
+				C00610276B58851C5ACEB46C /* [CP] Check Pods Manifest.lock */,
 				8CF22F2F22A10B2C00BAA867 /* Sources */,
 				8CF22F3022A10B2C00BAA867 /* Frameworks */,
 				8CF22F3122A10B2C00BAA867 /* Resources */,
+				B20F4475A726BEBD13B25974 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +370,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B20F4475A726BEBD13B25974 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALImageProcess/Pods-ALImageProcess-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALImageProcess/Pods-ALImageProcess-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ALImageProcess/Pods-ALImageProcess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C00610276B58851C5ACEB46C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ALImageProcess-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CF22F2F22A10B2C00BAA867 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,9 +421,10 @@
 				8CF22F6F22A10C9200BAA867 /* PicProcessViewController.m in Sources */,
 				8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */,
 				8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */,
-				8C379C68240F904D007BCD6F /* ALPhotoBrowserModel.m in Sources */,
 				8C0FDA3522EEF611004D0090 /* MyListViewController.m in Sources */,
+				8CC2F752242A113C007DACBB /* ALPhotoBroserCollectionViewCell.m in Sources */,
 				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
+				8CC2F753242A113C007DACBB /* ALPhotoBrowserModel.m in Sources */,
 				8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */,
 				8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */,
 				8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */,
@@ -348,6 +432,8 @@
 				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,
 				8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */,
 				8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */,
+				8CC2F754242A113C007DACBB /* ALPhotoBrowserEditView.m in Sources */,
+				8CC2F755242A113C007DACBB /* ALPhotoBrowserViewController.m in Sources */,
 				8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */,
 				8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */,
 			);
@@ -489,6 +575,7 @@
 		};
 		8CF22F4A22A10B2E00BAA867 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 680BCC0D492292FEB08F36FE /* Pods-ALImageProcess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +594,7 @@
 		};
 		8CF22F4B22A10B2E00BAA867 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB26F16CAB9CBCEB07A67D2C /* Pods-ALImageProcess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *originUrlString;
 
 
+// 以下屬性，編輯模式下有用
+/// 是否原圖
+@property (nonatomic, assign) BOOL isOrigin;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

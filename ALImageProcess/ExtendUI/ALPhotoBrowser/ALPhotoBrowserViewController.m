@@ -6,11 +6,12 @@
 //  Copyright © 2020 AL. All rights reserved.
 //
 
-#import "ALPhotoBroserViewController.h"
+#import "ALPhotoBrowserViewController.h"
 #import "ALPhotoBroserCollectionViewCell.h"
 
 #import <SDWebImage/SDWebImage.h>
 #import "UIViewController+AZLTopController.h"
+#import "ALPhotoBrowserEditView.h"
 
 
 @interface ALPhotoBrowserTransition : NSObject<UIViewControllerAnimatedTransitioning>
@@ -26,7 +27,7 @@
 }
 
 - (void)presentTransitionWithContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    ALPhotoBroserViewController *controller = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    ALPhotoBrowserViewController *controller = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     ALPhotoBrowserModel *model = [controller getCurrentPhotoModel];
     CGRect rect = controller.fromRect;
     if (rect.size.width != 0 && rect.size.height != 0) {
@@ -72,7 +73,7 @@
 }
 
 - (void)dismissTransitionWithContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    ALPhotoBroserViewController *controller = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    ALPhotoBrowserViewController *controller = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     CGRect rect = controller.fromRect;
     if (rect.size.width != 0 && rect.size.height != 0) {
         ALPhotoBroserCollectionViewCell *cell = (ALPhotoBroserCollectionViewCell*)[controller.photoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:controller.showingIndex inSection:0]];
@@ -123,15 +124,24 @@
 @end
 
 
-@interface ALPhotoBroserViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate>
+@interface ALPhotoBrowserViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate, ALPhotoBrowserEditViewDelegate, ALPhotoBroserCollectionViewCellDelegate>
 
 
 @property (nonatomic, strong) NSMutableArray<ALPhotoBrowserModel*> *dataArray;
-
+@property (nonatomic, strong) ALPhotoBrowserEditView *editView;
 
 @end
 
-@implementation ALPhotoBroserViewController
+@implementation ALPhotoBrowserViewController
+
+- (ALPhotoBrowserEditView *)editView{
+    if (_editView == nil) {
+        _editView = [[ALPhotoBrowserEditView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-60, self.view.bounds.size.width, 60)];
+        _editView.delegate = self;
+        _editView.originSelectLabel.text = @"原圖";
+    }
+    return _editView;
+}
 
 - (instancetype)init{
     if (self = [super init]) {
@@ -181,14 +191,38 @@
     [self.view addSubview:self.photoCollectionView];
     [self.photoCollectionView setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width*self.showingIndex, 0)];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (self.mode == ALPhotoBrowserModeEdit) {
+        [self showEditUI];
+        [self updateEditUI];
+    }
+}
+
+- (void)showEditUI{
+    [self.view addSubview:self.editView];
+    self.editView.hidden = NO;
+}
+
+- (void)updateEditUI{
+    if (self.mode != ALPhotoBrowserModeEdit) {
+        return;
+    }
+    ALPhotoBrowserModel *model = self.dataArray[self.showingIndex];
+    self.editView.originSelectImageView.highlighted = model.isOrigin;
     
 }
 
-
-
 #pragma mark - Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.showingIndex = (scrollView.contentOffset.x/self.view.bounds.size.width)+0.5;
+    NSInteger showingIndex = (scrollView.contentOffset.x/self.view.bounds.size.width)+0.5;
+    if (self.showingIndex != showingIndex) {
+        self.showingIndex = showingIndex;
+        [self updateEditUI];
+    }
+    
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -199,6 +233,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ALPhotoBroserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALPhotoBroserCollectionViewCell" forIndexPath:indexPath];
+    cell.delegate = self;
     ALPhotoBrowserModel *model = self.dataArray[indexPath.row];
     cell.originUrl = model.originUrlString;
     [cell.scrollView setZoomScale:1];
@@ -206,6 +241,16 @@
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.originUrlString] placeholderImage:model.placeholdImage];
     
     return cell;
+}
+
+- (void)alPhotoBroserCollectionViewCellDidTap:(ALPhotoBroserCollectionViewCell *)cell{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)alPhotoBrowserEditViewDidTapOriginSelect:(ALPhotoBrowserEditView *)view{
+    ALPhotoBrowserModel *model = self.dataArray[self.showingIndex];
+    model.isOrigin = !model.isOrigin;
+    [self updateEditUI];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate過場

@@ -210,7 +210,7 @@
 
 - (void)singleTap:(UITapGestureRecognizer*)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        [[self al_inViewController] dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate alPhotoBroserCollectionViewCellDidTap:self];
     }
 }
 
