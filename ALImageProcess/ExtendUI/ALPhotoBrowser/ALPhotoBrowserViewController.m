@@ -7,7 +7,7 @@
 //
 
 #import "ALPhotoBrowserViewController.h"
-#import "ALPhotoBroserCollectionViewCell.h"
+#import "ALPhotoBrowserCollectionViewCell.h"
 
 #import <SDWebImage/SDWebImage.h>
 #import <AZLExtend/AZLExtend-umbrella.h>
@@ -76,7 +76,7 @@
     ALPhotoBrowserViewController *controller = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     CGRect rect = controller.fromRect;
     if (rect.size.width != 0 && rect.size.height != 0) {
-        ALPhotoBroserCollectionViewCell *cell = (ALPhotoBroserCollectionViewCell*)[controller.photoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:controller.showingIndex inSection:0]];
+        ALPhotoBrowserCollectionViewCell *cell = (ALPhotoBrowserCollectionViewCell*)[controller.photoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:controller.showingIndex inSection:0]];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:[cell.imageView convertRect:cell.imageView.bounds toView:[UIApplication sharedApplication].keyWindow]];
         imageView.clipsToBounds = YES;
@@ -124,7 +124,7 @@
 @end
 
 
-@interface ALPhotoBrowserViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate, ALPhotoBrowserEditViewDelegate, ALPhotoBroserCollectionViewCellDelegate>
+@interface ALPhotoBrowserViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate, ALPhotoBrowserEditViewDelegate, ALPhotoBrowserCollectionViewCellDelegate>
 
 
 @property (nonatomic, strong) NSMutableArray<ALPhotoBrowserModel*> *dataArray;
@@ -187,7 +187,7 @@
     self.photoCollectionView.dataSource = self;
     self.photoCollectionView.pagingEnabled = YES;
     self.photoCollectionView.frame = [UIScreen mainScreen].bounds;
-    [self.photoCollectionView registerClass:[ALPhotoBroserCollectionViewCell class] forCellWithReuseIdentifier:@"ALPhotoBroserCollectionViewCell"];
+    [self.photoCollectionView registerClass:[ALPhotoBrowserCollectionViewCell class] forCellWithReuseIdentifier:@"ALPhotoBroserCollectionViewCell"];
     [self.view addSubview:self.photoCollectionView];
     [self.photoCollectionView setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width*self.showingIndex, 0)];
     
@@ -232,7 +232,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPhotoBroserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALPhotoBroserCollectionViewCell" forIndexPath:indexPath];
+    ALPhotoBrowserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALPhotoBrowserCollectionViewCell" forIndexPath:indexPath];
     cell.delegate = self;
     ALPhotoBrowserModel *model = self.dataArray[indexPath.row];
     cell.originUrl = model.originUrlString;
@@ -243,7 +243,7 @@
     return cell;
 }
 
-- (void)alPhotoBroserCollectionViewCellDidTap:(ALPhotoBroserCollectionViewCell *)cell{
+- (void)alPhotoBrowserCollectionViewCellDidTap:(ALPhotoBrowserCollectionViewCell *)cell{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

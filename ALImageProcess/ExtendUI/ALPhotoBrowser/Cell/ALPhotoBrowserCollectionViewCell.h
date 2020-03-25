@@ -10,19 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ALPhotoBroserCollectionViewCell;
-@protocol ALPhotoBroserCollectionViewCellDelegate <NSObject>
+@class ALPhotoBrowserCollectionViewCell;
+@protocol ALPhotoBrowserCollectionViewCellDelegate <NSObject>
 
-- (void)alPhotoBroserCollectionViewCellDidTap:(ALPhotoBroserCollectionViewCell*)cell;
+- (void)alPhotoBrowserCollectionViewCellDidTap:(ALPhotoBrowserCollectionViewCell*)cell;
 
 @end
 
-@interface ALPhotoBroserCollectionViewCell : UICollectionViewCell<UIScrollViewDelegate>
+@interface ALPhotoBrowserCollectionViewCell : UICollectionViewCell<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) NSString *originUrl;
-@property (nonatomic, weak) id<ALPhotoBroserCollectionViewCellDelegate> delegate;
+@property (nonatomic, weak) id<ALPhotoBrowserCollectionViewCellDelegate> delegate;
 
 - (void)setImageWidth:(CGFloat)width height:(CGFloat)height;
 

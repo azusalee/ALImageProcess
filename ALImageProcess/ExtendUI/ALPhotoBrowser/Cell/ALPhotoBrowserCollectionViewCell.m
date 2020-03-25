@@ -6,13 +6,13 @@
 //  Copyright © 2020 AL. All rights reserved.
 //
 
-#import "ALPhotoBroserCollectionViewCell.h"
+#import "ALPhotoBrowserCollectionViewCell.h"
 #import <AZLExtend/AZLExtend-umbrella.h>
 #import "UIViewController+AZLTopController.h"
 #import <SDImageCache.h>
 #import <Photos/Photos.h>
 
-@interface ALPhotoBroserCollectionViewCell()<UIGestureRecognizerDelegate>
+@interface ALPhotoBrowserCollectionViewCell()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) CGFloat imageWidth;
 @property (nonatomic, assign) CGFloat imageHeight;
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation ALPhotoBroserCollectionViewCell
+@implementation ALPhotoBrowserCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -210,7 +210,7 @@
 
 - (void)singleTap:(UITapGestureRecognizer*)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        [self.delegate alPhotoBroserCollectionViewCellDidTap:self];
+        [self.delegate alPhotoBrowserCollectionViewCellDidTap:self];
     }
 }
 
