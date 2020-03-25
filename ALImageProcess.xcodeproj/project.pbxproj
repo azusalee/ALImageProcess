@@ -31,7 +31,6 @@
 		8CF22F4022A10B2E00BAA867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3F22A10B2E00BAA867 /* Assets.xcassets */; };
 		8CF22F4322A10B2E00BAA867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F4122A10B2E00BAA867 /* LaunchScreen.storyboard */; };
 		8CF22F4622A10B2E00BAA867 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F4522A10B2E00BAA867 /* main.m */; };
-		8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */; };
 		8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F6222A10C9100BAA867 /* ScratchViewController.m */; };
 		8CF22F6B22A10C9200BAA867 /* ScratchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F6322A10C9100BAA867 /* ScratchViewController.xib */; };
 		8CF22F6C22A10C9200BAA867 /* PickColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F6622A10C9200BAA867 /* PickColorViewController.xib */; };
@@ -84,8 +83,6 @@
 		8CF22F4222A10B2E00BAA867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CF22F4422A10B2E00BAA867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CF22F4522A10B2E00BAA867 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8CF22F4D22A10BCE00BAA867 /* UIImage+AZLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AZLProcess.h"; sourceTree = "<group>"; };
-		8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AZLProcess.m"; sourceTree = "<group>"; };
 		8CF22F5B22A10C2800BAA867 /* AZLScratchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZLScratchView.h; sourceTree = "<group>"; };
 		8CF22F5C22A10C2800BAA867 /* AZLImageProcessView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZLImageProcessView.h; sourceTree = "<group>"; };
 		8CF22F5D22A10C2800BAA867 /* AZLScratchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZLScratchView.m; sourceTree = "<group>"; };
@@ -202,8 +199,6 @@
 		8CF22F4C22A10BA400BAA867 /* ImageProcess */ = {
 			isa = PBXGroup;
 			children = (
-				8CF22F4D22A10BCE00BAA867 /* UIImage+AZLProcess.h */,
-				8CF22F4E22A10BCE00BAA867 /* UIImage+AZLProcess.m */,
 			);
 			path = ImageProcess;
 			sourceTree = "<group>";
@@ -426,7 +421,6 @@
 				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
 				8CC2F753242A113C007DACBB /* ALPhotoBrowserModel.m in Sources */,
 				8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */,
-				8CF22F4F22A10BCE00BAA867 /* UIImage+AZLProcess.m in Sources */,
 				8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */,
 				8CF22F7422A10D9100BAA867 /* AZLScratchView.m in Sources */,
 				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,

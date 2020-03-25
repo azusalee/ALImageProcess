@@ -6,4 +6,5 @@ use_frameworks!
 target 'ALImageProcess' do
 
   pod 'SDWebImage', '~> 5.0'
+  pod 'AZLExtend'
 end

@@ -7,7 +7,7 @@
 //
 
 #import "MyListViewController.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 @interface MyListViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

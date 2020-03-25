@@ -7,7 +7,7 @@
 //
 
 #import "AZLImageProcessView.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 typedef NS_ENUM(NSUInteger, AZLProcessGestureType) {
     AZLProcessGestureTypeNone,

@@ -7,7 +7,7 @@
 //
 
 #import "ALPhotoBroserCollectionViewCell.h"
-#import "UIView+ALInController.h"
+#import <AZLExtend/AZLExtend-umbrella.h>
 #import "UIViewController+AZLTopController.h"
 #import <SDImageCache.h>
 #import <Photos/Photos.h>

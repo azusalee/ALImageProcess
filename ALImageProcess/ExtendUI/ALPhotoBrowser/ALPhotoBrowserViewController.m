@@ -10,7 +10,7 @@
 #import "ALPhotoBroserCollectionViewCell.h"
 
 #import <SDWebImage/SDWebImage.h>
-#import "UIViewController+AZLTopController.h"
+#import <AZLExtend/AZLExtend-umbrella.h>
 #import "ALPhotoBrowserEditView.h"
 
 

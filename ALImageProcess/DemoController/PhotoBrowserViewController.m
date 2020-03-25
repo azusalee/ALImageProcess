@@ -7,7 +7,7 @@
 //
 
 #import "PhotoBrowserViewController.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 @interface PhotoBrowserViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

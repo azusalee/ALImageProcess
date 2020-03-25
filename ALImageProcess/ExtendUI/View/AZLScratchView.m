@@ -7,7 +7,7 @@
 //
 
 #import "AZLScratchView.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 
 @interface AZLScratchView ()

@@ -7,7 +7,7 @@
 //
 
 #import "PicProcessViewController.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 #import "AZLImageProcessView.h"
 
 
@@ -166,28 +166,28 @@
 
 - (IBAction)filterDidTap:(id)sender {
     
-    NSArray *filters = [UIImage azl_getEffectArray];
-    
-    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"濾鏡"] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    //添加取消
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [actionController addAction:cancelAction];
-    
-    for (NSString *string in filters) {
-        
-        
-        UIAlertAction *action = [UIAlertAction actionWithTitle:string style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            self.imageView.image = [self.oriImage azl_imageFromFilterName:string];
-            
-        }];
-        [actionController addAction:action];
-    }
-    
-    [self presentViewController:actionController animated:YES completion:nil];
+//    NSArray *filters = [UIImage azl_getEffectArray];
+//    
+//    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"濾鏡"] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    
+//    //添加取消
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }];
+//    [actionController addAction:cancelAction];
+//    
+//    for (NSString *string in filters) {
+//        
+//        
+//        UIAlertAction *action = [UIAlertAction actionWithTitle:string style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            
+//            self.imageView.image = [self.oriImage azl_imageFromFilterName:string];
+//            
+//        }];
+//        [actionController addAction:action];
+//    }
+//    
+//    [self presentViewController:actionController animated:YES completion:nil];
     
 }
 

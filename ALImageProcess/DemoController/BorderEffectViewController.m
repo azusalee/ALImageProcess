@@ -7,7 +7,7 @@
 //
 
 #import "BorderEffectViewController.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 @interface BorderEffectViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

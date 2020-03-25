@@ -7,7 +7,7 @@
 //
 
 #import "PickColorViewController.h"
-#import "UIImage+AZLProcess.h"
+#import <AZLExtend/UIImage+AZLProcess.h>
 
 @interface PickColorViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
