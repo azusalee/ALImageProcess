@@ -21,10 +21,6 @@
 		8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AAD522B8DE2500086C7A /* GradientViewController.m */; };
 		8C82AAD822B8DE2500086C7A /* GradientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C82AAD622B8DE2500086C7A /* GradientViewController.xib */; };
 		8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82AADA22B8DE8400086C7A /* MyGradientView.m */; };
-		8CC2F752242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74A242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.m */; };
-		8CC2F753242A113C007DACBB /* ALPhotoBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */; };
-		8CC2F754242A113C007DACBB /* ALPhotoBrowserEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */; };
-		8CC2F755242A113C007DACBB /* ALPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */; };
 		8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3722A10B2C00BAA867 /* AppDelegate.m */; };
 		8CF22F3B22A10B2C00BAA867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F3A22A10B2C00BAA867 /* ViewController.m */; };
 		8CF22F3E22A10B2C00BAA867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F3C22A10B2C00BAA867 /* Main.storyboard */; };
@@ -65,14 +61,6 @@
 		8C82AAD622B8DE2500086C7A /* GradientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientViewController.xib; sourceTree = "<group>"; };
 		8C82AAD922B8DE8400086C7A /* MyGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGradientView.h; sourceTree = "<group>"; };
 		8C82AADA22B8DE8400086C7A /* MyGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGradientView.m; sourceTree = "<group>"; };
-		8CC2F747242A113C007DACBB /* ALPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserViewController.h; sourceTree = "<group>"; };
-		8CC2F749242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
-		8CC2F74A242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
-		8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserModel.m; sourceTree = "<group>"; };
-		8CC2F74D242A113C007DACBB /* ALPhotoBrowserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserModel.h; sourceTree = "<group>"; };
-		8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserEditView.m; sourceTree = "<group>"; };
-		8CC2F750242A113C007DACBB /* ALPhotoBrowserEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPhotoBrowserEditView.h; sourceTree = "<group>"; };
-		8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		8CF22F3322A10B2C00BAA867 /* ALImageProcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALImageProcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF22F3622A10B2C00BAA867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CF22F3722A10B2C00BAA867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,45 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8CC2F746242A113C007DACBB /* ALPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				8CC2F747242A113C007DACBB /* ALPhotoBrowserViewController.h */,
-				8CC2F751242A113C007DACBB /* ALPhotoBrowserViewController.m */,
-				8CC2F748242A113C007DACBB /* Cell */,
-				8CC2F74B242A113C007DACBB /* Model */,
-				8CC2F74E242A113C007DACBB /* View */,
-			);
-			path = ALPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		8CC2F748242A113C007DACBB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				8CC2F749242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.h */,
-				8CC2F74A242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		8CC2F74B242A113C007DACBB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8CC2F74D242A113C007DACBB /* ALPhotoBrowserModel.h */,
-				8CC2F74C242A113C007DACBB /* ALPhotoBrowserModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8CC2F74E242A113C007DACBB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8CC2F750242A113C007DACBB /* ALPhotoBrowserEditView.h */,
-				8CC2F74F242A113C007DACBB /* ALPhotoBrowserEditView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8CF22F2A22A10B2C00BAA867 = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +155,6 @@
 		8CF22F5022A10BE000BAA867 /* ExtendUI */ = {
 			isa = PBXGroup;
 			children = (
-				8CC2F746242A113C007DACBB /* ALPhotoBrowser */,
 				8CF22F5F22A10C2800BAA867 /* AZLImageProcess.bundle */,
 				8CF22F5A22A10C2800BAA867 /* View */,
 			);
@@ -417,17 +365,13 @@
 				8C42FD2F22C5EC0A0090B6B4 /* PhotoBrowserViewController.m in Sources */,
 				8CF22F6A22A10C9200BAA867 /* ScratchViewController.m in Sources */,
 				8C0FDA3522EEF611004D0090 /* MyListViewController.m in Sources */,
-				8CC2F752242A113C007DACBB /* ALPhotoBrowserCollectionViewCell.m in Sources */,
 				8CF22F7322A10D8E00BAA867 /* AZLImageProcessView.m in Sources */,
-				8CC2F753242A113C007DACBB /* ALPhotoBrowserModel.m in Sources */,
 				8C82AAD722B8DE2500086C7A /* GradientViewController.m in Sources */,
 				8C82AADB22B8DE8400086C7A /* MyGradientView.m in Sources */,
 				8CF22F7422A10D9100BAA867 /* AZLScratchView.m in Sources */,
 				8CF22F4622A10B2E00BAA867 /* main.m in Sources */,
 				8CF22F3822A10B2C00BAA867 /* AppDelegate.m in Sources */,
 				8CF22F7222A10D4800BAA867 /* JumpVCModel.m in Sources */,
-				8CC2F754242A113C007DACBB /* ALPhotoBrowserEditView.m in Sources */,
-				8CC2F755242A113C007DACBB /* ALPhotoBrowserViewController.m in Sources */,
 				8CF22F6E22A10C9200BAA867 /* PickColorViewController.m in Sources */,
 				8C66105F22BB768200415B37 /* BorderEffectViewController.m in Sources */,
 			);
